@@ -14,6 +14,8 @@ class GameScene: SKScene {
     private var main = SKSpriteNode()
     private var enemy = SKSpriteNode()
     private var ball = SKSpriteNode()
+    private var mainScore = SKLabelNode()
+    private var enemyScore = SKLabelNode()
 
     var difficulty: Difficulty = .medium
 
@@ -34,12 +36,20 @@ class GameScene: SKScene {
         self.enemy.physicsBody?.isDynamic = false
         self.ball = childNode(withName: "ball") as! SKSpriteNode
         self.ball.setScale(self.frame.width / 400)
+        self.mainScore = childNode(withName: "mainScore") as! SKLabelNode
+        self.enemyScore = childNode(withName: "enemyScore") as! SKLabelNode
 
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
         border.restitution = 1
         self.physicsBody = border
 
+        startGame()
+    }
+
+    private func startGame() {
+        self.ball.position = CGPoint(x: 0, y: 0)
+        self.ball.physicsBody?.velocity = CGVector.zero
         let angle = randomValue(between: 0, and: 2 * Double.pi)
         let dx = 50 * cos(angle)
         let dy = 50 * sin(angle)
@@ -75,6 +85,23 @@ class GameScene: SKScene {
         case .hard:
             enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.1))
         }
+
+        if ball.position.y <= self.main.position.y - 10 {
+            addScore(to: enemyScore)
+            startGame()
+            return
+        }
+        if ball.position.y >= self.enemy.position.y + 10 {
+            addScore(to: mainScore)
+            startGame()
+            return
+        }
+    }
+
+    private func addScore(to scoreLabel: SKLabelNode) {
+        guard let text = scoreLabel.text else { return }
+        guard let score = Int(text) else { return }
+        scoreLabel.text = String(score + 1)
     }
 
 }
