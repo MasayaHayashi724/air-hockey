@@ -48,7 +48,7 @@ class GameScene: SKScene {
     }
 
     private func startGame() {
-        self.ball.position = CGPoint(x: 0, y: 0)
+        self.ball.position = CGPoint.zero
         self.ball.physicsBody?.velocity = CGVector.zero
         let angle = randomValue(between: 0, and: 2 * Double.pi)
         let dx = 50 * cos(angle)
