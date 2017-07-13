@@ -29,13 +29,14 @@ class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            main.run(SKAction.moveTo(x: location.x, duration: 0.1))
-        }
+        movePaddles(with: touches)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        movePaddles(with: touches)
+    }
+
+    private func movePaddles(with touches: Set<UITouch>) {
         for touch in touches {
             let location = touch.location(in: self)
             main.run(SKAction.moveTo(x: location.x, duration: 0.1))
@@ -43,6 +44,7 @@ class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+        enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.2))
     }
 
 }
