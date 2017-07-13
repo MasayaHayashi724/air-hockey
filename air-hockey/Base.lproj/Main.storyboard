@@ -37,12 +37,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lx3-R5-Pek">
-                                <rect key="frame" x="148" y="143" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-ko-sPd">
+                                <rect key="frame" x="160" y="318" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Game"/>
+                                <state key="normal" title="Medium"/>
                                 <connections>
-                                    <action selector="startGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="efl-Ub-Gpp"/>
+                                    <action selector="startMediumGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="sBI-BD-f5F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-iP-xLl">
+                                <rect key="frame" x="171" y="385" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hard"/>
+                                <connections>
+                                    <action selector="startHardGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="zkh-1a-TsO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idp-aR-437">
+                                <rect key="frame" x="172" y="247" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Easy"/>
+                                <connections>
+                                    <action selector="startEasyGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="q6w-Yq-shn"/>
                                 </connections>
                             </button>
                         </subviews>

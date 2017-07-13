@@ -12,6 +12,8 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var difficulty: Difficulty!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +22,7 @@ class GameViewController: UIViewController {
             if let scene = GameScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                scene.difficulty = difficulty
                 
                 // Present the scene
                 view.presentScene(scene)

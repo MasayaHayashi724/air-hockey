@@ -15,6 +15,8 @@ class GameScene: SKScene {
     var enemy = SKSpriteNode()
     var ball = SKSpriteNode()
 
+    var difficulty: Difficulty!
+
     override func didMove(to view: SKView) {
         self.main = childNode(withName: "main") as! SKSpriteNode
         self.main.position = CGPoint(x: 0, y: -self.frame.height / 2 + 50)
