@@ -31,6 +31,7 @@ class GameScene: SKScene {
         self.enemy.physicsBody?.allowsRotation = false
         self.enemy.physicsBody?.isDynamic = false
         self.ball = childNode(withName: "ball") as! SKSpriteNode
+        self.ball.setScale(self.frame.width / 400)
 
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
