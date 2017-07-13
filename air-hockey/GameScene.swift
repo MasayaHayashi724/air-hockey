@@ -11,11 +11,11 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-    var main = SKSpriteNode()
-    var enemy = SKSpriteNode()
-    var ball = SKSpriteNode()
+    private var main = SKSpriteNode()
+    private var enemy = SKSpriteNode()
+    private var ball = SKSpriteNode()
 
-    var difficulty: Difficulty!
+    var difficulty: Difficulty = .medium
 
     override func didMove(to view: SKView) {
         self.main = childNode(withName: "main") as! SKSpriteNode
@@ -67,7 +67,14 @@ class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
-        enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.2))
+        switch difficulty {
+        case .easy:
+            enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.3))
+        case .medium:
+            enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.2))
+        case .hard:
+            enemy.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.1))
+        }
     }
 
 }
