@@ -17,7 +17,19 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         self.main = childNode(withName: "main") as! SKSpriteNode
+        self.main.position = CGPoint(x: 0, y: -self.frame.height / 2 + 50)
+        self.main.size = CGSize(width: self.frame.width / 5, height: self.frame.width / 20)
+        self.main.physicsBody = SKPhysicsBody(rectangleOf: self.main.frame.size)
+        self.main.physicsBody?.affectedByGravity = false
+        self.main.physicsBody?.allowsRotation = false
+        self.main.physicsBody?.isDynamic = false
         self.enemy = childNode(withName: "enemy") as! SKSpriteNode
+        self.enemy.position = CGPoint(x: 0, y: self.frame.height / 2 - 50)
+        self.enemy.size = CGSize(width: self.frame.width / 5, height: self.frame.width / 20)
+        self.enemy.physicsBody = SKPhysicsBody(rectangleOf: self.enemy.frame.size)
+        self.enemy.physicsBody?.affectedByGravity = false
+        self.enemy.physicsBody?.allowsRotation = false
+        self.enemy.physicsBody?.isDynamic = false
         self.ball = childNode(withName: "ball") as! SKSpriteNode
 
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
