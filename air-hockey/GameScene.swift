@@ -29,9 +29,17 @@ class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            main.run(SKAction.moveTo(x: location.x, duration: 0.1))
+        }
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            main.run(SKAction.moveTo(x: location.x, duration: 0.1))
+        }
     }
 
     override func update(_ currentTime: TimeInterval) {
