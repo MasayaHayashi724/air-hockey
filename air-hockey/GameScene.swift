@@ -38,7 +38,15 @@ class GameScene: SKScene {
         border.restitution = 1
         self.physicsBody = border
 
-        self.ball.physicsBody?.applyImpulse(CGVector(dx: -30, dy: -30))
+        let angle = randomValue(between: 0, and: 2 * Double.pi)
+        let dx = 50 * cos(angle)
+        let dy = 50 * sin(angle)
+        self.ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
+    }
+
+    func randomValue(between min: Double, and max: Double) -> Double {
+        let random = Double(arc4random_uniform(UINT32_MAX)) / Double(UINT32_MAX)
+        return random * (max - min) + min
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
