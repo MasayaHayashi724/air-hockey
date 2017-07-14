@@ -17,7 +17,15 @@ class GameScene: SKScene {
     private var mainScore = SKLabelNode()
     private var enemyScore = SKLabelNode()
 
+    var VC: GameViewController!
     var difficulty: Difficulty = .medium
+    var gameIsFinished: Bool {
+        guard let mainScoreStr = mainScore.text else { return false }
+        guard let enemyScoreStr = enemyScore.text else { return false }
+        guard let mainScore = Int(mainScoreStr) else { return false }
+        guard let enemyScore = Int(enemyScoreStr) else { return false }
+        return (mainScore == 5) || (enemyScore == 5)
+    }
 
     override func didMove(to view: SKView) {
         self.main = childNode(withName: "main") as! SKSpriteNode
@@ -88,20 +96,41 @@ class GameScene: SKScene {
 
         if ball.position.y <= self.main.position.y - 10 {
             addScore(to: enemyScore)
-            startGame()
             return
         }
         if ball.position.y >= self.enemy.position.y + 10 {
             addScore(to: mainScore)
-            startGame()
             return
         }
+
     }
 
     private func addScore(to scoreLabel: SKLabelNode) {
         guard let text = scoreLabel.text else { return }
         guard let score = Int(text) else { return }
         scoreLabel.text = String(score + 1)
+        if gameIsFinished {
+            endGame()
+        } else {
+            startGame()
+        }
+    }
+
+    private func endGame() {
+        self.ball.position = .zero
+        self.ball.physicsBody?.velocity = .zero
+        guard let mainScoreStr = mainScore.text else { return }
+        guard let enemyScoreStr = enemyScore.text else { return }
+        guard let mainScore = Int(mainScoreStr) else { return }
+        guard let enemyScore = Int(enemyScoreStr) else { return }
+        if mainScore > enemyScore {
+            print("You Win!")
+        } else {
+            print("You Lose...")
+        }
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+            self.VC.navigationController?.popViewController(animated: true)
+        }
     }
 
 }
