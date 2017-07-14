@@ -10,10 +10,10 @@ Air Hockey Game for iOS
 
 Thanks [Jared Davidson](https://www.youtube.com/user/Archetapp/featured)!
 
-https://www.youtube.com/watch?v=LdL99CH23E8
-https://www.youtube.com/watch?v=7M0VYy2jkEU
-https://www.youtube.com/watch?v=MKFfz2YObuY
-https://www.youtube.com/watch?v=AcL_jHgrmCo
+- https://www.youtube.com/watch?v=LdL99CH23E8
+- https://www.youtube.com/watch?v=7M0VYy2jkEU
+- https://www.youtube.com/watch?v=MKFfz2YObuY
+- https://www.youtube.com/watch?v=AcL_jHgrmCo
 
 ## Installation
 
