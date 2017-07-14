@@ -59,9 +59,11 @@ class GameScene: SKScene {
         self.ball.position = CGPoint.zero
         self.ball.physicsBody?.velocity = CGVector.zero
         let angle = randomValue(between: 0, and: 2 * Double.pi)
-        let dx = 50 * cos(angle)
-        let dy = 50 * sin(angle)
-        self.ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
+        let dx = 45 * cos(angle)
+        let dy = 45 * sin(angle)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            self.ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
+        }
     }
 
     func randomValue(between min: Double, and max: Double) -> Double {
