@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,38 +38,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-ko-sPd">
-                                <rect key="frame" x="160" y="318" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Medium"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-ko-sPd">
+                                <rect key="frame" x="16" y="303" width="343" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cfe-id-Qt1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="Medium">
+                                    <color key="titleColor" red="0.2416246084" green="0.80089808770000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startMediumGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="sBI-BD-f5F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-iP-xLl">
-                                <rect key="frame" x="171" y="385" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hard"/>
-                                <connections>
-                                    <action selector="startHardGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="zkh-1a-TsO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idp-aR-437">
-                                <rect key="frame" x="172" y="247" width="33" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Easy"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idp-aR-437">
+                                <rect key="frame" x="16" y="217" width="343" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="Easy">
+                                    <color key="titleColor" red="0.2416246084" green="0.80089808770000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startEasyGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="q6w-Yq-shn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-iP-xLl">
+                                <rect key="frame" x="16.5" y="385" width="343" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" red="0.2416246084" green="0.80089808770000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startHardGame:" destination="0Ys-2u-BQN" eventType="touchUpInside" id="zkh-1a-TsO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nt-70-FzE">
+                                <rect key="frame" x="16" y="91" width="343" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="g5P-pr-JMR"/>
+                                    <constraint firstAttribute="width" constant="343" id="zsd-78-RgX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83966957334701564" green="1" blue="0.91234780459186537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6nt-70-FzE" secondAttribute="trailing" id="18U-4h-5kQ"/>
+                            <constraint firstItem="hNr-iP-xLl" firstAttribute="width" secondItem="Ilz-ko-sPd" secondAttribute="width" id="D3h-bx-vfo"/>
+                            <constraint firstItem="Ilz-ko-sPd" firstAttribute="top" secondItem="idp-aR-437" secondAttribute="bottom" constant="26" id="PyP-M9-QUr"/>
+                            <constraint firstItem="Ilz-ko-sPd" firstAttribute="centerY" secondItem="rCM-km-igb" secondAttribute="centerY" id="dJ3-NN-hm8"/>
+                            <constraint firstItem="hNr-iP-xLl" firstAttribute="height" secondItem="Ilz-ko-sPd" secondAttribute="height" id="djf-Q2-11Y"/>
+                            <constraint firstItem="idp-aR-437" firstAttribute="centerX" secondItem="Ilz-ko-sPd" secondAttribute="centerX" id="dp6-58-Jh1"/>
+                            <constraint firstItem="Ilz-ko-sPd" firstAttribute="trailing" secondItem="rCM-km-igb" secondAttribute="trailingMargin" id="f4q-BL-LlE"/>
+                            <constraint firstItem="6nt-70-FzE" firstAttribute="leading" secondItem="rCM-km-igb" secondAttribute="leadingMargin" id="gOo-Bl-dDP"/>
+                            <constraint firstItem="hNr-iP-xLl" firstAttribute="centerX" secondItem="Ilz-ko-sPd" secondAttribute="centerX" id="hrL-Z4-9ty"/>
+                            <constraint firstItem="idp-aR-437" firstAttribute="top" secondItem="6nt-70-FzE" secondAttribute="bottom" constant="22" id="n3T-G8-plU"/>
+                            <constraint firstItem="hNr-iP-xLl" firstAttribute="top" secondItem="Ilz-ko-sPd" secondAttribute="bottom" constant="22" id="shp-c9-URO"/>
+                            <constraint firstItem="idp-aR-437" firstAttribute="height" secondItem="Ilz-ko-sPd" secondAttribute="height" id="wXi-9o-DE0"/>
+                            <constraint firstItem="idp-aR-437" firstAttribute="width" secondItem="Ilz-ko-sPd" secondAttribute="width" id="y2Y-VQ-Kd7"/>
+                            <constraint firstItem="Ilz-ko-sPd" firstAttribute="leading" secondItem="rCM-km-igb" secondAttribute="leadingMargin" id="zr8-29-91w"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cFU-jA-9Rd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa6-7v-YvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-797" y="149"/>
+            <point key="canvasLocation" x="-797.60000000000002" y="148.87556221889056"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
