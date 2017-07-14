@@ -127,13 +127,25 @@ class GameScene: SKScene {
         guard let mainScore = Int(mainScoreStr) else { return }
         guard let enemyScore = Int(enemyScoreStr) else { return }
         if mainScore > enemyScore {
-            print("You Win!")
+            showResultLabel(text: "You Win!")
         } else {
-            print("You Lose...")
+            showResultLabel(text: "You Lose...")
         }
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
             self.VC.navigationController?.popViewController(animated: true)
         }
+    }
+
+    private func showResultLabel(text: String) {
+        self.mainScore.isHidden = true
+        self.enemyScore.isHidden = true
+        self.ball.isHidden = true
+        let resultLabel = SKLabelNode(text: text)
+        resultLabel.fontName = "Chalkboard SE"
+        resultLabel.fontSize = 100
+        resultLabel.fontColor = .white
+        resultLabel.position = .zero
+        self.addChild(resultLabel)
     }
 
 }
